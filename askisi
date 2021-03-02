@@ -1,0 +1,35 @@
+import random
+def to_matrix(l,n):
+    return [l[i:i+n] for i in range(0, len(l), n)]
+def initialize(l,n):
+    number_list = ["S","O"]*int(l*n/2)
+
+    random.shuffle(number_list)
+    return to_matrix(number_list,n)
+    #initialize(5,10)
+    def ex(interrations):
+    p=0
+    n=int(input("Enter number"))
+    l=int(input("Enter number"))
+    for k in range(interrations):
+        A=initialize(l,n)
+        for i in range(l-2):
+            for j in range(2,n):
+                if A[i][j]=="S" and A[i+1][j-1]=="O" and A[i+2][j-2]=="S":
+                    p=p+1
+        #Oριζοντια SOS
+        for i in range (l-2):
+            for j in range(n):
+                if A[i][j]=="S" and A[i+1][j]=="O" and A[i+2][j]=="S":
+                    p=p+1             
+        for i in range(l-2):
+            for j in range(n-2):
+                if A[i][j]=="S" and A[i+1][j+1]=="O" and A[i+2][j+2]=="S":
+                    p=p+1           
+        for i in range(l):
+            for j in range(n-2):
+                if A[i][j]=="S" and A[i][j+1]=="O" and A[i][j+2]=="S":
+                    p=p+1            
+
+    return p/interrations        
+    #print(ex(100))
