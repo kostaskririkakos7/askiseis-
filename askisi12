@@ -1,0 +1,15 @@
+file = open('r"C:\Users\Kostas\Desktop\askisi12.txt") 
+myWords = [] 
+G = [] 
+
+
+for line in file.readlines():
+     for character in line:
+ 
+         myWords.append (255 - int((ord(character))))
+         
+
+for i in myWords:
+    G.append(chr(i))
+reversed_G = G[::-1]
+print("".join(reversed_G))
