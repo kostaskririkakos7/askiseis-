@@ -1,0 +1,25 @@
+import pickle 
+file = open("dictionary.txt" , "wb")
+
+my_dict = {"Name":"John", 
+           "Age":21,
+           "Id":28
+           }
+           
+           
+           
+       
+pickle.dump(my_dict, file)
+file.close()
+
+
+
+with open('dictionary.txt', 'rb')
+    data = f.read()
+d =  pickle.loads(data)
+
+
+print(d['Name'])
+
+
+δεν μπορεσα να κανω κατι παραπανω.
